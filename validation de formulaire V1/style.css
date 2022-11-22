@@ -100,3 +100,7 @@ button {
     color: black;
     margin-bottom: 1%;
 }
+.valid {
+    text-align: center;
+    color: green;
+}

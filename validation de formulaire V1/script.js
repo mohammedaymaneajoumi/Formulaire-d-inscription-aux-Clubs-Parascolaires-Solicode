@@ -119,8 +119,7 @@ function Soumettre() {
     if(regExNom.test(nom) && nom.length!==0 && regExNom.test(prénom) &&prénom.length!==0 && regExemail.test(adresseEmail) 
     && adresseEmail.length!==0 && regExtélephone.test(télephone) &&télephone.length!==0&& table !==0 && tablee !==0 && selected.length<=3
     && selected!==0){
-        document.getElementById("BigResultst").innerHTML = "votre validation est effectuée avec succes"
-        document.getElementById('BigResultst').style.color = "green"
+        window.open("confirmation.html")
     }
     else {
         document.getElementById("BigResultst").innerHTML = "votre validation n'est pas effectuée"
