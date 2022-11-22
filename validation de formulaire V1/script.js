@@ -11,12 +11,17 @@ function Soumettre() {
     let table = [];
     checkboxs.forEach((checkbox)=>{
     table.push(checkbox.value);
-    })
+    });
     let tablee = [];
     checkboxss.forEach((checkbox)=>{
     tablee.push(checkbox.value);
-    })
-
+    });
+    let selected = [];
+    for (var option of document.getElementById('Clubs').options){
+        if (option.selected){
+            selected.push(option.value);
+        }
+    }
     if(nom.length>30 ){
         document.getElementById('Nom1').innerHTML = "le nom ne doivent pas dépasser 30 caractères"
         document.getElementById('Nom1').style.color = "red"
@@ -101,12 +106,7 @@ function Soumettre() {
         document.getElementById('resRadio1').innerHTML = "votre Groupe est valide";
         document.getElementById('resRadio1').style.color = "green"
     }
-    let selected = [];
-    for (var option of document.getElementById('Clubs').options){
-        if (option.selected){
-            selected.push(option.value);
-        }
-    }
+
     if(selected=="" || selected.length>3){
         document.getElementById('selectClub').innerHTML = "choisir au minimum 1 club et au maximum 3";
         document.getElementById('selectClub').style.color = "red"
