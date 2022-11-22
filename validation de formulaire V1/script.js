@@ -6,11 +6,11 @@ function Soumettre() {
     let regExemail = /^[a-zA-Z]+[.]{1}[a-zA-Z]+[@]{1}[o]{1}[f]{1}[p]{2}[t]{1}[.]{1}[m]{1}[a]{1}$/;
     let télephone = document.getElementById('Télephone').value;
     let regExtélephone = /^[0]{1}[5-7]{1}[0-9]{8}/;
-    let checkboxs = document.querySelectorAll('input[name="Genre"]:checked');
+    let checkboxs = document.querySelectorAll('input[name="Genre"]:checked'); //fals true in all contain genre name
     let checkboxss = document.querySelectorAll('input[name="Groupe"]:checked');
-    let table = [];
-    checkboxs.forEach((checkbox)=>{
-    table.push(checkbox.value);
+    let table = []; //creat table
+    checkboxs.forEach((checkbox)=>{ //order all table element
+    table.push(checkbox.value); //push what selected in table
     });
     let tablee = [];
     checkboxss.forEach((checkbox)=>{
@@ -107,7 +107,7 @@ function Soumettre() {
         document.getElementById('resRadio1').style.color = "green"
     }
 
-    if(selected=="" || selected.length>3){
+    if(selected=="" || selected.length>3){ // if && means 2 coditions must all be treu to apply if || means if fst condition apply is 2end apply
         document.getElementById('selectClub').innerHTML = "choisir au minimum 1 club et au maximum 3";
         document.getElementById('selectClub').style.color = "red"
     }
@@ -116,4 +116,14 @@ function Soumettre() {
         document.getElementById('selectClub').style.color = "green"
     }
     
+    if(regExNom.test(nom) && nom.length!==0 && regExNom.test(prénom) &&prénom.length!==0 && regExemail.test(adresseEmail) 
+    && adresseEmail.length!==0 && regExtélephone.test(télephone) &&télephone.length!==0&& table !==0 && tablee !==0 && selected.length<=3
+    && selected!==0){
+        document.getElementById("BigResultst").innerHTML = "votre validation est effectuée avec succes"
+        document.getElementById('BigResultst').style.color = "green"
+    }
+    else {
+        document.getElementById("BigResultst").innerHTML = "votre validation n'est pas effectuée"
+        document.getElementById('BigResultst').style.color = "red"
+    }
 }
