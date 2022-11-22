@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <img src="img/student-clubs-header-02.jpg" alt="903526_449.jpg">
+        <p>activités parascolaires</p>
+        <nav>
+        
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">activities</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#sign up">sign up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>qu'y a-t-il dans ce club ? !</h1>
+                <p>Afin de maintenir la motivation des apprenants, leur offrir des moments 
+                    agréables d'échange et d'épanouissement, Solicode a pensé à créer des 
+                    activités parascolaires sous forme de clubs (informatique, robotique, 
+                    jeux d'échecs, foot,musique, théatre).
+                    Pour cela, on vous demande de remplir un formulaire d'inscription 
+                    pour s'inscrire à un ou plusieurs clubs.
+                </p>
+                <div id="sign up">
+                </div>
+                <fieldset >
+                    <h2>Inscription</h2>
+                    <div id="inputs">
+                        <h3>Nom :</h3>
+                        <input type="text" placeholder="Nom" id="Nom" onkeyup="ValidName(this)">
+                        <div id="Nom1"></div>
+                    </div>
+                    <div id="inputs">
+                        <h3>Prénom :</h3>
+                        <input type="text" placeholder="Prénom" id="Prénom" onkeyup="ValidPrénom(this)">
+                        <div id="Prénom1"></div>
+                    </div>
+                    <div id="inputs">
+                        <h3>Adresse Email :</h3>
+                        <input type="text" placeholder="prenom.nom@ofppt.ma" id="ValidEmail" onkeyup="ValidEmail(this)">
+                        <div id="resEmail"></div>
+                    </div>
+                    <div id="inputs">
+                        <h3>Télephone :</h3>
+                        <input type="text" placeholder="+212-6xxxxxxxx" id="Télephone" onkeyup="ValidTélephone(this)"> 
+                        <div id="Télephone1"></div>
+                    </div>
+                    
+                        <form>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h3>Genre :</h3>
+                                        <div id="resRadio"></div>
+                                    </td>
+                                    <td>
+                                        <input type="radio" name="Genre" >Féminin
+                                        <input type="radio" name="Genre" >Masculin
+                                        
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <h3>Groupe :</h3>
+                                        <div id="resRadio1"></div>
+                                    </td>
+                                    <td>
+                                        <input type="radio" name="Groupe">DW101
+                                        <input type="radio" name="Groupe">DW102
+                                        <input type="radio" name="Groupe">DW103
+                                        <input type="radio" name="Groupe">DM101
+                                        <input type="radio" name="Groupe">DM102
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h3>Club(s) :</h3>
+                                        <div id="selectClub"></div>
+                                        
+                                    </td>
+                                    <td>
+                                        <select id="Clubs" multiple="multiple">
+                                            <option value="Informatique">Informatique</option>
+                                            <option value="Robotique">Robotique</option>
+                                            <option value="Jeu d'échecs">Jeu d'échecs</option>
+                                            <option value="Musique">Musique</option>
+                                            <option value="Foot">Foot</option>
+                                            <option value="Théatre">Théatre</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                        <button id="inputs" onclick="Soumettre()">Soumettre</button>
+                </fieldset>
+    
+            </section>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
