@@ -97,8 +97,17 @@ function ValidTélephone(){
 
 
 function Soumettre() {
+    let nom = document.getElementById('Nom').value;
+    let prénom = document.getElementById('Prénom').value;
+    let regExprénom = /^[a-zA-Z]{1,30}$/;
+    let email = document.getElementById('ValidEmail').value;
+    let regExemail = /^[a-zA-Z]+[.]{1}[a-zA-Z]+[@]{1}[o]{1}[f]{1}[p]{2}[t]{1}[.]{1}[m]{1}[a]{1}$/;
+    let télephone = document.getElementById('Télephone').value;
+    let regExtélephone = /^[0]{1}[5-7]{1}[0-9]{8}$/;
     let checkboxs = document.querySelectorAll('input[name="Genre"]:checked');
     let checkboxss = document.querySelectorAll('input[name="Groupe"]:checked');
+
+    let regExNom = /^[a-zA-Z]{1,30}$/;
     let table = [];
     checkboxs.forEach((checkbox)=>{
     table.push(checkbox.value);
@@ -137,5 +146,15 @@ function Soumettre() {
     else if (selected.length<=3){
         document.getElementById('selectClub').innerHTML = "votre club(s) est valid";
         document.getElementById('selectClub').style.color = "green"
+    }
+    if(regExNom.test(nom) && nom.length!==0 && regExprénom.test(prénom) &&prénom.length!==0 && regExemail.test(email) 
+        &&email.length!==0 && regExtélephone.test(télephone) &&télephone.length!==0&& table !==0 && tablee !==0 && selected.length<=3
+        && selected!==0){
+        document.getElementById("BigResultst").innerHTML = "votre validation est effectuée avec succes"
+        document.getElementById('BigResultst').style.color = "green"
+    }
+    else {
+        document.getElementById("BigResultst").innerHTML = "votre validation n'est pas effectuée"
+        document.getElementById('BigResultst').style.color = "red"
     }
 }
